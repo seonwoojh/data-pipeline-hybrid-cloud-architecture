@@ -48,10 +48,12 @@ resource "aws_db_parameter_group" "DB_Slave_Params" {
   parameter {
     name = "gtid-mode"
     value = "ON_PERMISSIVE"
+    apply_method = "pending-reboot"
   }
 
   parameter {
     name = "enforce_gtid_consistency"
     value = "ON"
+    apply_method = "pending-reboot"
   }
 }
